@@ -24,7 +24,7 @@ html, body {
 .gameSquare {
 	width: 800px;
 	height: 494px;
-	background-image: url(/Users/michael/cjBorrow/cjwhackamole/brianpeter.jpg);
+	background-image: url(/images/brianpeter.jpg);
 	background-image: fixed;
 	background-color: blue;
 	background-size: 800px 494px;
