@@ -1,0 +1,68 @@
+html, body {
+	font-family: "Lucida Console", Courier, monospace;
+	height: 100%;
+	width: 100%;
+}
+
+
+/* Image Styling */
+
+.notHere {
+	display: none;
+}
+
+.active {
+	display: block;
+}
+
+/* Game Window, Button, and Counter Holder */
+.container {
+	width: 800px;
+	height: 800px;
+}
+
+.gameSquare {
+	width: 800px;
+	height: 494px;
+	background-image: url(/Users/michael/cjBorrow/cjwhackamole/brianpeter.jpg);
+	background-image: fixed;
+	background-color: blue;
+	background-size: 800px 494px;
+	background-repeat: no-repeat;
+}
+
+.gameHeading {
+	width: 720px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+#timer {
+	text-align: center;
+}
+
+#counter-holder {
+	text-align: center;
+}
+
+#counter > span {
+	margin-right: auto;
+	margin-left: auto;
+}
+#resetGame {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+#startGame {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*#quagmire {
+	position: relative;
+	top: 324px;
+	left: 700px;
+}*/
