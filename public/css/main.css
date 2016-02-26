@@ -22,6 +22,8 @@ html, body {
 }
 
 .gameSquare {
+	margin-right: auto;
+	margin-left: auto;
 	width: 800px;
 	height: 494px;
 	background-image: url(/images/brianpeter.jpg);
