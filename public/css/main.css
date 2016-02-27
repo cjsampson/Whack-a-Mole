@@ -40,31 +40,24 @@ html, body {
 	text-align: center;
 }
 
-#timer {
-	text-align: center;
+
+/* Score Container */
+.scoreCountContainer {
+	display: flex;
+	justify-content: center;
+	height: 200px;
+	align-content: center;
 }
 
-#counter-holder {
-	text-align: center;
+.button {
+  margin-bottom: 10px;
+  padding:5px;
+  background-color: #dcdcdc;
+  border: 1px solid #666;
+  color:#000;
+  text-decoration:none;
 }
 
-#counter > span {
-	margin-right: auto;
-	margin-left: auto;
+#timerDiv {
+	display: inline-block;
 }
-#resetGame {
-	margin-right: auto;
-	margin-left: auto;
-	display: block;
-}
-#startGame {
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-/*#quagmire {
-	position: relative;
-	top: 324px;
-	left: 700px;
-}*/

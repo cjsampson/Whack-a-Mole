@@ -4,6 +4,8 @@ var seconds;
 var current;
 var showMole;
 var counterInterval;
+var addRandomImageInterval;
+var showingImage;
 
 
 // Timer Function
@@ -19,7 +21,7 @@ var countdown = function(){
 // Random image Generator
 function pickImage() {
 	var images = $('.gameSquare img');
-    var rand = Math.floor(Math.random() * 3);
+    var rand = Math.floor(Math.random() * 5);
     current = $(images[rand]).data('char');
     return images[rand];
 }
@@ -36,12 +38,18 @@ $('#startGame').on('click', function(e) {
 });
 
 $('#resetGame').on('click', function(){
-	counter = 0;
+	$('#timer').text('30');
+	$('#counter').text('0');
+	$('#startGame').attr('disabled', false);
+	$('.gameSquare').children().hide();
+	clickedImage = false;
 	clearInterval(counterInterval);
+	clearInterval(showingImage);
 });
 	
 // Click listener for 
 function clickedImage(e){
+
 	// increment count
 	counter++;
 	// set the value of the DOM element to the new value of counter
@@ -52,43 +60,31 @@ function clickedImage(e){
 	var image = pickImage();
 	// add a new image to the screen
 	addRandomImage(image);
+
 }
 
 $('.gameSquare img').on('click', clickedImage);
 
-function addRandomImage(image){
+function addRandomImage(image) {
+
 	var position = randomPositionValues(image);
 	console.log(position);
-	// (position) is the object of properties/methods returned from the randomPositionValue() call
+	// (position) is the css object properties
 	$(image).css(position);
 	// parse/make to into jQuery object and display image with CSS
 	$(image).show();//addClass('active').removeClass('notHere');
 
-
-	var showingImage = setTimeout(function(){
+	showingImage = setTimeout(function() {
 		$(image).hide();
 		var image = pickImage();
 		// add a new image to the screen
 		addRandomImage(image);
 	}, 2500);
 
-
-	// 
 	$(image).on('click', function(){
 		clearInterval(showingImage);
 	});
 }
-
-
-	// Remove it after 2.5 seconds
-	// setTimeout(function(){
-	// 	if (current != $(image).data('char')) {
-	// 		$(image).show(); 
-	// 		return;
-	// 	}
-	// 	$(image).hide();//removeClass('active').addClass('notHere');
-	// 	clearInterval();
-	// }, 2500);
 
 function randomPositionValues(image) {
 	return {
